@@ -11,4 +11,4 @@ This Repository accompanies the ICAIL 2026 paper titled "GradeLegal: Automated G
 
 # Prompts
 
-- `./gorp-prompts` contains all the prompts skeleton used in the experiments for Public Law (GORP). Please read the `README.md` file in the `prompts` folder for more information about the prompts.
+- `./prompts/` contains the prompts skeleton used in the experiments for Public Law. Please read the `README.md` file in the `prompts` folder for more information about the prompts.
