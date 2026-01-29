@@ -53,10 +53,11 @@ This README maps **model names referenced in the paper** (left) to the **exact m
 
 ---
 
-## Notes for Reproducibility
+## Notes
 
 - **Paper name** = shorthand label used in the manuscript and plots/tables.
 - **Experiment ID** = exact model identifier used in code/configs.
 - Suffix conventions:
   - `-it` / `-instruct` = instruction-tuned/chat variant
   - `-Th.` / `-thinking` / `-Reasoning` = reasoning/thinking variant (as provided by the respective provider)
+
