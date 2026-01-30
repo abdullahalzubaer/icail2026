@@ -18,7 +18,7 @@ This README maps **model names referenced in the paper** (left) to the **exact m
 | GPT-OSS-120B | `openrouter/openai/gpt-oss-120b` |
 | GPT-OSS-20B | `openrouter/openai/gpt-oss-20b` |
 | Llama-3.3-70B-it | `openrouter/meta-llama/llama-3.3-70b-instruct` |
-| mistral-Large | `openrouter/mistralai/mistral-large-2512` |
+| Mistral-Large | `openrouter/mistralai/mistral-large-2512` |
 
 ---
 
@@ -60,4 +60,5 @@ This README maps **model names referenced in the paper** (left) to the **exact m
 - Suffix conventions:
   - `-it` / `-instruct` = instruction-tuned/chat variant
   - `-Th.` / `-thinking` / `-Reasoning` = reasoning/thinking variant (as provided by the respective provider)
+
 
