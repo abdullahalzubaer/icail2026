@@ -4,7 +4,7 @@ This repository accompanies the ICAIL 2026 paper
 **“GradeLegal: Automated Grading for German Legal Cases”**
 
 ## Repository Structure
-
+> [!NOTE]
 > **Each subfolder contains its own README with additional details where relevant.**
 
 - `code/`: Standalone Jupyter notebooks and code for analysis, ensembling, inference (reference), and figures.
