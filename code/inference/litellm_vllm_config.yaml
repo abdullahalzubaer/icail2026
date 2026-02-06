@@ -1,0 +1,303 @@
+# =========================
+# Core I/O & sampling scope
+# =========================
+
+# CSV that contains the prompt columns.
+primary_file: "ADD_YOUR_CSV_HERE"
+
+for_testing_purpose: false                   
+working_with_n_percentage_of_data: 1         
+
+# Your prompt columns are here.
+prompt_to_score_list:                        
+
+  # Criminal Law
+  
+  - prompt_v1_ta_min_ha
+  - prompt_v3_ts_ext_rubric_ha
+  - prompt_v4_ts_ext_model_ha
+  - prompt_v5_ts_ext_rubric_model_ha
+
+  # Public Law
+
+  - prompt_v1_ta_min_dp
+  - prompt_v3_ts_ext_rubric_dp
+  - prompt_v4_ts_ext_model_dp
+  - prompt_v5_ts_ext_rubric_model_dp    
+
+overwrite_existing_output_columns: false 
+
+                                              
+
+provide_system_message: false
+      
+# system_message: "Global fallback system msg."  # OPTIONAL (used only when provide_system_message=true AND no per-prompt entry).
+
+
+system_messages:                              
+  prompt_v1_ta_min_dp: "Per-prompt system msg for v1."
+  prompt_v3_ts_ext_rubric_dp:  "Per-prompt system msg for v3."
+  prompt_v4_ts_ext_model_dp:  "Per-prompt system msg for v4."
+  prompt_v5_ts_ext_rubric_model_dp:  "Per-prompt system msg for v5."
+
+
+
+
+max_tokens: 8192                              
+seed: null                                    
+clear_hf_cache_after_each_model: false        
+upfront_check_extraction: true        
+
+extraction:
+  enabled: true                       
+  function: "extraction_functions.extraction_fn_3"
+
+
+
+# =================
+# Iteration control
+# =================
+
+iteration:
+  iterations: 1                               
+  start_iteration: 3                          
+
+# ==========================
+# Models and hyperparameters
+# ==========================
+
+
+
+# -------------------------------
+# VLLM models and hyperparameters
+# -------------------------------
+
+# The parent process spawns a fresh child process per model (frees VRAM between runs). Sweet !
+
+
+# 80B model requies 4 GPUS with GPU utilization set to 0.8
+
+model_list_vllm:  #Models to run, sequentially.
+
+  ###
+  ### Done
+  ###     
+
+  - mistralai/Ministral-3-14B-Instruct-2512
+  - mistralai/Ministral-3-14B-Reasoning-2512
+  - google/gemma-3-27b-it
+  - utter-project/EuroLLM-22B-Instruct-2512
+  - swiss-ai/Apertus-70B-Instruct-2509 # 4 gpu with 0.9 gpu utilization
+  - Qwen/QwQ-32B 
+  - Qwen/Qwen3-32B
+  - Qwen/Qwen3-30B-A3B-Thinking-2507       
+  - Qwen/Qwen3-30B-A3B-Instruct-2507
+
+  ###
+  ###  Had some issuew ith them
+  ###
+
+  # - LeoLM/leo-hessianai-70b-chat
+  # - Equall/Saul-7B-Instruct-v1
+  - Equall/SaulLM-54B-Instruct
+
+
+model_hyperparameters_vllm:
+
+  mistralai/Ministral-3-14B-Instruct-2512:
+    decoding_policy: custom_sampling
+    temperature: 0.09
+    llm_init:
+      gpu_memory_utilization: 0.9
+      tensor_parallel_size: 4        
+
+  mistralai/Ministral-3-14B-Reasoning-2512:
+    decoding_policy: custom_sampling
+    temperature: 1
+    llm_init:
+      gpu_memory_utilization: 0.9
+      tensor_parallel_size: 4             
+
+  Qwen/Qwen3-32B:
+    decoding_policy: default
+    llm_init:
+      gpu_memory_utilization: 0.9
+      tensor_parallel_size: 4              
+
+  Qwen/Qwen3-30B-A3B-Instruct-2507:
+    decoding_policy: default
+    llm_init:
+      gpu_memory_utilization: 0.9
+      tensor_parallel_size: 4             
+
+  Qwen/Qwen3-30B-A3B-Thinking-2507:
+    decoding_policy: default
+    llm_init:
+      gpu_memory_utilization: 0.9
+      tensor_parallel_size: 4             
+  
+  Equall/Saul-7B-Instruct-v1:
+    decoding_policy: default
+    llm_init:
+      gpu_memory_utilization: 0.9
+      tensor_parallel_size: 2             
+
+  LeoLM/leo-hessianai-70b-chat:
+    decoding_policy: default
+    llm_init:
+      gpu_memory_utilization: 0.8
+      tensor_parallel_size: 4             
+
+  Qwen/QwQ-32B:
+    decoding_policy: default
+    llm_init:                     
+      gpu_memory_utilization: 0.8
+      tensor_parallel_size: 4              
+
+  swiss-ai/Apertus-70B-Instruct-2509:
+    decoding_policy: custom_sampling
+    temperature: 0.8
+    top_p: 0.9          
+    llm_init:
+      gpu_memory_utilization: 0.9
+      tensor_parallel_size: 4
+
+  google/gemma-3-27b-it:
+    decoding_policy: default
+    llm_init:
+      gpu_memory_utilization: 0.8
+      tensor_parallel_size: 4             
+
+  utter-project/EuroLLM-22B-Instruct-2512:
+    decoding_policy: default
+    llm_init:
+      gpu_memory_utilization: 0.8
+      tensor_parallel_size: 4            
+
+  Equall/SaulLM-54B-Instruct:
+    decoding_policy: default
+    chat_template: "{{ bos_token }}{% for message in messages %}{% if (message['role'] == 'user') != (loop.index0 % 2 == 0) %}{{ raise_exception('Conversation roles must alternate user/assistant/user/assistant/...') }}{% endif %}{% if message['role'] == 'user' %}{{ '[INST] ' + message['content'] + ' [/INST]' }}{% elif message['role'] == 'assistant' %}{{ message['content'] + eos_token}}{% else %}{{ raise_exception('Only user and assistant roles are supported!') }}{% endif %}{% endfor %}"  # OPTIONAL: custom Jinja2 chat template, omit to use model default. Provide if not defined in models from trasnformers.
+    llm_init:
+      gpu_memory_utilization: 0.8
+      tensor_parallel_size: 4              
+
+  gpt-oss-20b:
+    decoding_policy: default                  
+    extra_sampling: {}
+    extra_llm: {}
+  
+  openai/gpt-oss-120b:
+    decoding_policy: default                 
+    llm_init:                                
+      gpu_memory_utilization: 0.90           
+      tensor_parallel_size: 2              
+
+    extra_sampling: {}                       
+    extra_llm: {}                            
+
+
+
+# -------------------------------
+# Litellm models and hyperparameters
+# -------------------------------
+
+
+model_list_litellm:
+  # Gemini Models
+  - openrouter/google/gemini-2.5-pro
+
+  # Deepseek Models
+  - openrouter/deepseek/deepseek-v3.1-terminus
+
+
+  # Qwen Models
+  - openrouter/qwen/qwen3-next-80b-a3b-thinking
+  - openrouter/qwen/qwen3-next-80b-a3b-instruct
+  - openrouter/qwen/qwen3-235b-a22b-2507
+  - openrouter/qwen/qwen3-235b-a22b-thinking-2507
+
+  # OpenAI Models
+  - gpt-5-2025-08-07
+  - gpt-5.1-2025-11-13
+  - gpt-5.2-2025-12-11
+  - gpt-5-mini-2025-08-07
+  - openrouter/openai/gpt-oss-120b
+  - openrouter/openai/gpt-oss-20b
+  - gpt-4o-mini-2024-07-18
+  - gpt-4o-2024-11-20
+  - gpt-4.1-2025-04-14
+  - gpt-4.1-mini-2025-04-14
+
+
+  # llama
+  - openrouter/meta-llama/llama-3.3-70b-instruct
+
+  # Mistral
+  - openrouter/mistralai/mistral-large-2512
+
+
+
+
+
+
+model_hyperparameters_litellm:
+
+  openrouter/qwen/qwen3-235b-a22b-2507:
+    decoding_policy: default
+    stream: false
+
+  openrouter/qwen/qwen3-235b-a22b-thinking-2507:
+    decoding_policy: default
+    stream: false
+
+  gpt-5-mini-2025-08-07:
+    decoding_policy: default
+
+  openrouter/mistralai/mistral-large-2512:
+    decoding_policy: default
+
+  gpt-4o-mini-2024-07-18:
+    decoding_policy: default
+
+  openrouter/qwen/qwen3-next-80b-a3b-instruct:
+    decoding_policy: default
+    stream: false
+
+  openrouter/meta-llama/llama-3.3-70b-instruct:
+    decoding_policy: default
+
+  openrouter/deepseek/deepseek-v3.1-terminus:
+    decoding_policy: default
+
+  openrouter/qwen/qwen3-next-80b-a3b-thinking:
+    decoding_policy: default
+
+  openrouter/google/gemini-2.5-pro:
+    decoding_policy: default
+
+  gpt-4.1-mini-2025-04-14:
+    decoding_policy: default
+
+  gpt-4.1-2025-04-14:
+    decoding_policy: default
+
+  openrouter/openai/gpt-oss-20b:
+    decoding_policy: default
+
+  openrouter/openai/gpt-oss-120b:
+    decoding_policy: default
+
+  gpt-5.2-2025-12-11:
+    decoding_policy: default
+
+  gpt-5.1-2025-11-13:
+    decoding_policy: default
+
+  gpt-5-2025-08-07:
+    decoding_policy: default
+
+  gpt-4o-2024-11-20:
+    decoding_policy: default
+
+  gpt-4o-mini:
+    decoding_policy: default
