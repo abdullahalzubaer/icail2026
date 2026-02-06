@@ -8,7 +8,7 @@ This repository accompanies the ICAIL 2026 paper
 > **Each subfolder contains its own README with additional details where relevant.**
 
 - `code/`: Standalone Jupyter notebooks and code for analysis, ensembling, inference (reference), and figures.
-- `data/`: released data artifacts (instructor materials and model outputs/grades).
+- `data/`: released data artifacts (instructor materials and model's grades).
 - `prompts/`: prompt skeletons used in the experiments (German originals + English translations for reference).
 
 ## Environments
