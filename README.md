@@ -1,7 +1,7 @@
 # GradeLegal: Automated Grading for German Legal Cases
 
 This repository accompanies the ICAIL 2026 paper  
-**“GradeLegal: Automated Grading for German Legal Cases.”**
+**“GradeLegal: Automated Grading for German Legal Cases”**
 
 ## Repository Structure
 
