@@ -295,3 +295,62 @@ def fisher_metrics_with_optional_bootstrap(
         },
     })
     return out
+
+
+def filter_by_fisher(df, threshold=0.4, sort=True, ascending=False):
+    """
+    Filter rows where mean_fisher > threshold and optionally sort.
+
+    Parameters
+    ----------
+    df : pandas.DataFrame
+        Input dataframe containing a 'mean_fisher' column.
+    threshold : float
+        Minimum mean_fisher value to keep.
+    sort : bool
+        Whether to sort the results by mean_fisher.
+    ascending : bool
+        Sort order (False = highest first).
+
+    Returns
+    -------
+    pandas.DataFrame
+        Filtered (and optionally sorted) dataframe.
+    """
+    
+    result = df[df["mean_fisher"] > threshold]
+
+    if sort:
+        result = result.sort_values("mean_fisher", ascending=ascending)
+
+    return result
+
+
+def top_n_models_by_fisher(df, n=10):
+    """
+    Return the top n rows with the highest mean_fisher,
+    considering only the best score per base_model.
+
+    Parameters
+    ----------
+    df : pandas.DataFrame
+        DataFrame containing 'base_model' and 'mean_fisher'.
+    n : int
+        Number of top rows to return.
+
+    Returns
+    -------
+    pandas.DataFrame
+        Top n rows after deduplicating by base_model using the highest score.
+    """
+
+    # keep the row with the highest mean_fisher per model
+    best_per_model = (
+        df.sort_values("mean_fisher", ascending=False)
+          .drop_duplicates(subset="base_model", keep="first")
+    )
+
+    # take the top n
+    result = best_per_model.head(n)
+
+    return result
