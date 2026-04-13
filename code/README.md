@@ -5,7 +5,8 @@ This repository contains the code and notebooks used in our experiments. All not
 ## Directory Structure
 
 ### `./analysis`
-Contains the main code and notebooks for analyzing experimental results.
+- Contains the main code and notebooks for analyzing experimental results.
+- Contains the error analysis code and notebooks for the error analysis section of the paper.
 
 ### `./ensemble`
 Contains code related to ensemble analysis.
