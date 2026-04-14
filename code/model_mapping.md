@@ -37,7 +37,7 @@ This README maps **model names referenced in the paper** (left) to the **exact m
 
 ---
 
-## Models run locally (vLLM via Hugging Face)
+## Models run locally on up to four NVIDIA A100 GPUs.(vLLM via Hugging Face)
 
 | Paper name | Experiment ID (HF repo) |
 |---|---|
