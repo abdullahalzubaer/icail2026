@@ -21,3 +21,14 @@ Code Execution Guide
 
     Note:
     Ensure your config file (litellm_vllm_config.yaml) lists all desired models and their parameters.
+
+
+Hyperparameters:
+We used provider-default hyperparameters for all models, as in prior benchmarking work [2] 
+
+
+
+
+
+
+[2] Odysseas S. Chlapanis, Dimitrios Galanis, Nikolaos Aletras, and Ion Androutsopoulos. 2025. GreekBarBench: A Challenging Benchmark for Free-Text Legal Reasoning and Citations. In Findings of the Association for Computational Linguistics: EMNLP 2025, pages 25099–25119, Suzhou, China. Association for Computational Linguistics.
