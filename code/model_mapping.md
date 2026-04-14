@@ -37,7 +37,7 @@ This README maps **model names referenced in the paper** (left) to the **exact m
 
 ---
 
-## Models run locally on up to four NVIDIA A100 GPUs.(vLLM via Hugging Face)
+## Models run locally on up to four NVIDIA A100 GPUs.(vLLM [1] via Hugging Face)
 
 | Paper name | Experiment ID (HF repo) |
 |---|---|
@@ -60,3 +60,6 @@ This README maps **model names referenced in the paper** (left) to the **exact m
 - Suffix conventions:
   - `-it` / `-instruct` = instruction-tuned/chat variant
   - `-Th.` / `-thinking` / `-Reasoning` = reasoning/thinking variant (as provided by the respective provider)
+
+
+[1] Woosuk Kwon, Zhuohan Li, Siyuan Zhuang, Ying Sheng, Lianmin Zheng, Cody Hao Yu, Joseph Gonzalez, Hao Zhang, and Ion Stoica. 2023. Efficient Memory Management for Large Language Model Serving with PagedAttention. In Proceedings of the 29th Symposium on Operating Systems Principles (SOSP '23). Association for Computing Machinery, New York, NY, USA, 611–626. https://doi.org/10.1145/3600006.3613165
