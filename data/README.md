@@ -42,3 +42,13 @@ Example (format illustration):
 `litellm_prompt_v1_ta_min_ha__gpt-5-2025-08-07__i2__h44136fa3__extracted_element`
 
 `vllm_prompt_v5_ts_ext_rubric_model_ha__eurollm-22b-instruct-2512__i1__h44136fa3__extracted_element`
+
+
+---
+
+**Caption:** Summarized case facts and student tasks for criminal and public law; translated to English from German.
+
+| Case fact | Student task |
+|---|---|
+| **Criminal Law:** A altered an inspection sticker, obstructed an overtaking driver who crashed while avoiding collision, and left; she also induced her sister to falsely accept responsibility for a speeding offense, and arranged an inaccurate alibi at trial, leading to A's conviction. The police later searched the sister's empty apartment based on a prosecutor's (not a judge's) order after detecting marijuana odor, found narcotics; the admissibility of that evidence is disputed. | Part I: Determine the criminal liability of A, her sister, and her friend. Part II: Analyze the admissibility of the narcotics evidence and whether an objection is required for any exclusion. |
+| **Public Law:** A city enacted and published a pigeon-feeding ban that was adopted by the council despite not being on the council's meeting agenda. After a resident kept feeding pigeons, the city issued an individual enforcement order; he timely sued to annul it, alleging defects in the ordinance's adoption and legal basis. | Assess the likelihood of success of the annulment action against the individual order, including incidental review of the underlying ordinance's validity. |
