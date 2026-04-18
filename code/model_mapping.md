@@ -1,7 +1,7 @@
 # Model Name Mapping (Paper ↔ Experiment IDs)
 
 
-This README maps **model names referenced in the paper** (left) to the **exact model identifiers used in our experiments** (right), grouped by access method (OpenRouter, OpenAI API, or local vLLM via Hugging Face).
+This README maps **model names referenced in the Paper** (left) to the **exact model identifiers used in our experiments** (right), grouped by access method (OpenRouter, OpenAI API, or local vLLM via Hugging Face).
 
 ---
 
