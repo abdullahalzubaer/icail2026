@@ -45,10 +45,12 @@ conda activate environment_cuda_icail2026
 
 
 ---
+
+> [!NOTE]
+> ### Figures and Tables that did not make it to the five-page version of the paper due to space constrain.
 ---
 
 
-# Tables that did not make it to the five page version of the paper
 
 **Figure 1.** Performance improvement (**Δ**) over the Task Agnostic baseline for each model, averaged across the criminal and public dataset, comparing **Instr. + Rubric**, **Instr. + Solution**, and **Instr. + Rubric + Sol.**
 
