@@ -1,6 +1,8 @@
 # Tables that did not make it to the five page version of the paper
 
+**Caption:** Performance improvement (**Δ**) over the Task Agnostic baseline for each model, averaged across the criminal and public dataset, comparing **Instr. + Rubric**, **Instr. + Solution**, and **Instr. + Rubric + Sol.**
 
+![Figure 1](code/prompt_ablation_figure/Improvement_vs_Task_Agnostic:_Rubric_vs_Solution_vs_Rubric+Sol_(All_models).png)
 
 ---
 
