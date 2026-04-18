@@ -26,7 +26,7 @@ Contains scripts for running model inference. These scripts were **used in our e
 ## Mapping Files
 
 ### `model_mapping.md`
-Provides a mapping from the model names used in the paper to the exact model identifiers used in our experiments.
+Provides a mapping from the model names used in Table 1 and in the paper to the exact model identifiers used in our experiments.
 
 ### `prompt_mapping.md`
 Provides a mapping from the prompt names used in the paper to the exact prompt identifiers used in our experiments.
