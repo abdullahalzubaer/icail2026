@@ -49,7 +49,7 @@ Name in Table 1 | Name used in main text | Experiment ID (HF repo) |
 |Minist.-14B| Ministral-3-14B-it | `mistralai/Ministral-3-14B-Instruct-2512` |
 |Minist.-14B-R.| Ministral-3-14B-Rea. | `mistralai/Ministral-3-14B-Reasoning-2512` |
 |Gemma-3-27B| Gemma-3-27B-it | `google/gemma-3-27b-it` |
-|EuroLLM-22B -| EuroLLM-22B-it | `utter-project/EuroLLM-22B-Instruct-2512` |
+|EuroLLM-22B| EuroLLM-22B-it | `utter-project/EuroLLM-22B-Instruct-2512` |
 |Apertus-70B| Apertus-70B-it | `swiss-ai/Apertus-70B-Instruct-2509` |
 
 ---
