@@ -1,12 +1,30 @@
 # Tables that did not make it to the five page version of the paper
 
-**Caption:** Performance improvement (**Δ**) over the Task Agnostic baseline for each model, averaged across the criminal and public dataset, comparing **Instr. + Rubric**, **Instr. + Solution**, and **Instr. + Rubric + Sol.**
+**Figure 1.** Performance improvement (**Δ**) over the Task Agnostic baseline for each model, averaged across the criminal and public dataset, comparing **Instr. + Rubric**, **Instr. + Solution**, and **Instr. + Rubric + Sol.**
 
 ![Figure 1](code/prompt_ablation_figure/Improvement_vs_Task_Agnostic:_Rubric_vs_Solution_vs_Rubric+Sol_(All_models).png)
 
 ---
 
-**Caption:** Summarized case facts and student tasks for criminal and public law; translated to English from German.
+**Figure 2.** Grade trajectories under **Instr.+Rubric+Solution** for criminal law and public law. Cases are sorted by reference grade in descending order along the x-axis. Lines show mean predicted grades across runs, with shaded bands indicating ±1 SD, relative to the reference grade.
+![Figure 2](code/analysis/calibration_plot.png)
+
+---
+
+**Figure 3.** Error-bucket distribution under **Instr.+Rubric+Solution** for criminal law and public law. Stacked bars show the mean proportion across runs for each grading-error category and model.
+
+![Figure 3](code/analysis/error_bucket_fig.png)
+
+
+---
+
+
+
+---
+
+
+
+**Table 1:** Summarized case facts and student tasks for criminal and public law; translated to English from German.
 
 | Case fact | Student task |
 |---|---|
@@ -15,7 +33,7 @@
 
 ---
 
-**Caption:** Summary statistics for criminal and public law. Grades use 0–18 scale. QWK (public law) between the instructor's grade and the rubric-equipped assistants.
+**Table 2:** Summary statistics for criminal and public law. Grades use 0–18 scale. QWK (public law) between the instructor's grade and the rubric-equipped assistants.
 | Dataset | **Criminal Law** | **Public Law** |
 |---|---:|---:|
 | Setting | Take-home | Exam cond. |
@@ -28,7 +46,7 @@
 
 ---
 
-**Caption:** Agreement across prompt variants for criminal law. **Bold** / <ins>underline</ins> = best / runner-up per column. Values are **Pearson Corr.** ± **SD** over three runs. Top-3 reasoning and non-reasoning models from Table 1 . Baseline: Corr. ≈ 0.058[1].
+**Table 3:** Agreement across prompt variants for criminal law. **Bold** / <ins>underline</ins> = best / runner-up per column. Values are **Pearson Corr.** ± **SD** over three runs. Top-3 reasoning and non-reasoning models from Table 1 . Baseline: Corr. ≈ 0.058[1].
 
 | Group | **LLMs** | **Task Agnostic** | **Instr. + Rubric** | **Instr. + Solution** | **Instr.+Rubric + Solution** |
 |---|---|---:|---:|---:|---:|
