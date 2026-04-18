@@ -13,12 +13,12 @@ Contains all grades produced by the model across all of our experiments.
 
 The column of the csv file has the following aliases in the code and they correspond to the descriptions in the paper as follows:
 
-| Prompt Key in Code                | Description as in the paper          |
-|-----------------------------------|--------------------------------------|
-| `prompt_v1_ta_min`                | Task Agnostic                        |
-| `prompt_v3_ts_ext_rubric`         | Instruction + Rubric                 |
-| `prompt_v4_ts_ext_model`          | Instruction + Solution               |
-| `prompt_v5_ts_ext_rubric_model`   | Instruction + Rubric + Solution      |
+| Prompt Key in Code                | Description as in the paper          | Short name in the paper's main text | Short name in Tables |
+|-----------------------------------|--------------------------------------|-------------------------------------|----------------------|
+| `prompt_v1_ta_min`                | Task Agnostic                        | Task-Agnostic| Task Agn.
+| `prompt_v3_ts_ext_rubric`         | Instruction + Rubric                 | Instr.+Rubric| Ins.+Rub.
+| `prompt_v4_ts_ext_model`          | Instruction + Solution               | Instr.+Solution| Ins.+Sol.
+| `prompt_v5_ts_ext_rubric_model`   | Instruction + Rubric + Solution      | Instr.+Rubric+Solution| Ins.+Rub.+Sol.
 
 
 General structure of one prompt column is as follows:
