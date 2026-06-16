@@ -4,6 +4,27 @@ This repository accompanies the ICAIL 2026 paper
 **“GradeLegal: Automated Grading for German Legal Cases”**
  (now accepted as short paper!)
 
+> Please cite our arxiv paper if our work was helpful : )
+> 
+> (Note: ICAIL 2026 citation is on the way )
+
+
+
+```
+@misc{zubaer2026gradelegalautomatedgradinggerman,
+	title        = {GradeLegal: Automated Grading for German Legal Cases},
+	author       = {Abdullah Al Zubaer and Lorenz Wendlinger and Simon Alexander Nonn and Michael Granitzer and Jelena Mitrovic},
+	year         = 2026,
+	url          = {https://arxiv.org/abs/2605.21076},
+	eprint       = {2605.21076},
+	archiveprefix = {arXiv},
+	primaryclass = {cs.CL}
+}
+
+```
+
+ 
+
 ## Repository Structure
 > [!NOTE]
 > **Each subfolder contains its own README with additional details where relevant.**
