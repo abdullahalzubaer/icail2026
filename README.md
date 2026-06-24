@@ -5,6 +5,8 @@ This repository accompanies the ICAIL 2026 paper
  (now accepted as short paper!)
 
 > Please cite our arxiv paper if our work was helpful : )
+>
+> https://arxiv.org/pdf/2605.21076
 > 
 > (Note: ICAIL 2026 citation is on the way )
 
